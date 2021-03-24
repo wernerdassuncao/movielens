@@ -1,6 +1,6 @@
 ---
-Title: Author:
-'HarvardX - Data Science Professional Certificate - Capstone - Project MovieLens' : "Werner Alencar Advincula Dassuncao"
+title: 'HarvardX - Data Science Professional Certificate - Capstone - Project MovieLens'
+author: "Werner Alencar Advincula Dassuncao"
 ---
 
 This project is inspired by the *Netflix Prize* - "an open competition for the best collaborative filtering algorithm to predict user ratings for films, based on previous ratings without any other information about the users or films" ['https://en.wikipedia.org/wiki/Netflix_Prize'].  The video-streaming service Netflix provided the competitors with a training data set of 100,480,507 ratings, provided by 480,189 users regarding 17,770 movies. The competition began on October 2, 2006 and aimed to improve Netflix's *Cinematch* own algorithm by 10%.  In summary, the *training* data set was used to train algorithms and the final model for the team's algorithm was used to make predictions on the *qualifying* data set. The quality of the predictions were scored against the true grades in terms of root mean squared error (RMSE).  
