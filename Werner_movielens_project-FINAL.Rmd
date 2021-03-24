@@ -20,17 +20,19 @@ knitr::opts_chunk$set(out.width = '80%')
 
   This project is the final assignment for the completion of the Professional Certificate in Data Science from Harvard via the EDX online learning platform. Inspired by the *Netflix Prize* where teams competed to achieve the best predicting performance for the movie streaming service Netflix. The goal of the project is to create a movie recommendation system. The *MovieLens* data was made available by Grouplens research lab.
   
-  The idea is to predict what movies a particular user will like based on ratings data provided by users regarding movies. Several techniques were employed and the best performing one was Parallel Matrix Factorization from Recosystem.
+  The idea is to create a top list for movies a particular user would like based on predicted ratings from a machine learning algorithm. Several techniques were employed over the course of this project and the best performing one was the Parallel Matrix Factorization from Recosystem package..
 
 
 # INTRODUCTION
 
 
-This project is inspired by the *Netflix Prize* - "an open competition for the best collaborative filtering algorithm to predict user ratings for films, based on previous ratings without any other information about the users or films" ['https://en.wikipedia.org/wiki/Netflix_Prize'].  The video-streaming service Netflix provided the competitors with a training data set of 100,480,507 ratings, provided by 480,189 users regarding 17,770 movies. The competition began on October 2, 2006 and aimed to improve Netflix's *Cinematch* own algorithm by 10%.  In summary, the *training* data set was used to train algorithms and the final model for the team's algorithm was used to make predictions on the *qualifying* data set. The quality of the predictions were scored against the true grades in terms of root mean squared error (RMSE).  
+As a final step on the Capstone module from the Data Science Professional Certificate from HarvardX, this project is inspired by the *Netflix Prize*: "an open competition for the best collaborative filtering algorithm to predict user ratings for films, based on previous ratings without any other information about the users or films" ['https://en.wikipedia.org/wiki/Netflix_Prize'].  
 
-For the scope of this project, we will gather, explore, visualize, analyze and make predictions over the data from the *MovieLens* data set with 10,000,000 ratings provided by GroupLens, a research lab in the Department of Computer Science and Engineering at the University of Minnesota. 
+The video-streaming service Netflix provided the competitors with a training data set of 100,480,507 ratings, provided by 480,189 users regarding 17,770 movies. The competition began on October 2, 2006 and aimed to improve Netflix's *Cinematch* own algorithm by 10%.  In summary, the *training* data set was used to train algorithms and the final model for the team's algorithm was used to make predictions on the *qualifying* data set. The quality of the predictions were scored against the true grades in terms of root mean squared error (RMSE).  
 
-Recommendations can be done using the users own past ratings, but also using a technique *collaborative filtering* can filter out movies that the user might like based on ratings from similar users.
+For the scope of this project, we will gather, explore, visualize, analyze and make predictions over the data from the *MovieLens* data set with 10,000,000 ratings provided by GroupLens, a research lab in the Department of Computer Science and Engineering at the University of Minnesota, United States. 
+
+Recommendations can be done using the users own past ratings, but also using *collaborative filtering* techniques to filter out movies that the user might like based on ratings from e.g. from similar users.
 
 
 # LOAD THE DATA
@@ -80,7 +82,7 @@ dl <- tempfile()
 download.file('http://files.grouplens.org/datasets/movielens/ml-10m.zip', dl)
 ```
 
-After downloading the zip file, we notice there are two data files "movies.dat" and "ratings.dat". The movies file has columns divided by "::" and each line will be split 3 times: movieId, title and genres.
+After downloading the zip file, we notice that there are two data files "movies.dat" and "ratings.dat". The movies file has columns divided by "::" and each line will be split 3 times: movieId, title and genres.
 
 ```{r movies table}
 # MovieID::Title::Genres
@@ -855,7 +857,7 @@ models_rmse %>% knitr::kable(caption = 'Performance comparison of the methods on
 
 # VALIDATION 
 
-As wee can observe from the table above, the best performing method was the Recosystem - Parallel Matrix Factorization with a `r MF_method_rmse` RMSE. This was our best performing model. We will use it for the final test: how it performs on the validation set (unseen/unknown data).
+As we can observe from the table above, the best performing method was the Recosystem - Parallel Matrix Factorization with a `r MF_method_rmse` RMSE. This was our best performing model. We will use it for the final test: how it performs on the validation set (unseen/unknown data).
 
 Firstly we need to prepare the validation set to the format needed:
 
